@@ -1,10 +1,10 @@
 FROM centos:7
 
-MAINTAINER qdubious 
+MAINTAINER Charlie Pence 
 
 ENV KAFKA_VERSION="0.8.2.1" SCALA_VERSION="2.10"
 
-RUN yum update && yum install -y unzip openjdk-7-jdk wget curl git docker.io jq
+RUN yum -y update && yum install -y unzip java-1.7.0-openjdk-devel docker.io jq wget curl git net-tools
 
 ADD download-kafka.sh /tmp/download-kafka.sh
 RUN /tmp/download-kafka.sh
