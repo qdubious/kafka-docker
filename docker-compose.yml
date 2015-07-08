@@ -1,12 +1,8 @@
-zookeeper:
-  image: springxd/zookeeper:1.2.0
-  ports: 
-    - "2181"
 kafka:
   build: .
   ports:
     - "9092"
-  links: 
+  external_links: 
     - zookeeper:zk
   environment:
     KAFKA_ADVERTISED_HOST_NAME: 192.168.59.103
